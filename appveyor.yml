@@ -23,7 +23,7 @@ test_script:
   - ps: |
       Write-Host "Running tests..."
       dotnet restore DyeDurhamLexicalSortEngine/Infrastructure.Test/Infrastructure.Test.csproj
-      dotnet test DyeDurhamLexicalSortEngine/Infrastructure.Test/Infrastructure.Test.csproj --no-build --verbosity normal
+      dotnet test DyeDurhamLexicalSortEngine/Infrastructure.Test/Infrastructure.Test.csproj --verbosity normal
 
 artifacts:
   - path: '**\bin\Release\**\*.exe'
