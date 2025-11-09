@@ -26,10 +26,8 @@ namespace DyeDurhamLexicalSortEngine.Infrastructure.Services
             if (DataList.Any())
             {
                 foreach (var item in DataList)
-                {
-                    //if (item != string.Empty)
-                   // try
-                    {
+                {                    
+                 
                         var parts = item.Split(' ');
                         var people = new Person();
 
@@ -54,14 +52,7 @@ namespace DyeDurhamLexicalSortEngine.Infrastructure.Services
                                 throw new InvalidNumberNameParameterException();
 
                         }
-                        allpersonData.Add(people);
-                    }                    
-                  //  catch(InvalidNumberNameParameterException ex)
-                    {
-                        // implmenet based on requirement 
-                        //check empty lines and log 
-                        //throw new InvalidNumberNameParameterException();
-                    }
+                        allpersonData.Add(people);                                  
                 }
                 return allpersonData.OrderBy(x => x.LastName).ToList();
             }

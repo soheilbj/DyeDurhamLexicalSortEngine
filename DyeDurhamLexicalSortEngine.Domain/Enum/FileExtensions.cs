@@ -11,7 +11,7 @@ namespace DyeDurhamLexicalSortEngine.Domain.Enum
     {
         [Description(".txt")]
         Text,
-        [Description(".doc")]//open to expand for feautre 
+        [Description(".doc")]//open to expand for future 
         Doc,
     }
 }

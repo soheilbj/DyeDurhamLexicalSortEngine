@@ -1,5 +1,4 @@
 ﻿using DyeDurhamLexicalSortEngine.Domain.Contracts;
-using DyeDurhamLexicalSortEngine.Domain.Entities;
 using DyeDurhamLexicalSortEngine.Domain.Exceptions;
 using DyeDurhamLexicalSortEngine.Infrastructure.Services;
 
@@ -45,7 +44,6 @@ namespace Infrastructure.Test
         [Fact]
         public void SortBy_InvalidParameter_ShouldThrowException()
         {
-            // Arrange
             var people = new List<string> { "Janet Parsons"
                                             ,"Vaughn Lewis"
                                             ,"Adonis Adonis Adonis Adonis Adonis Adonis Julius Archer"
@@ -57,16 +55,13 @@ namespace Infrastructure.Test
                                             ,"Hunter Uriah Mathew Clarke"
                                             ,"Mikayla Lopez"
                                             ,"Frankie Conner Ritter"};
-            // Act & Assert
             Assert.Throws<InvalidNumberNameParameterException>(() => _service.DisplayAndSaveSortedFile(people));
         }
 
         [Fact]
         public void SortBy_EmptyList_ShouldReturnEmptyList()
-        {
-            // Arrange
-            var people = new List<string>();
-            // Act
+        {            
+            var people = new List<string>();         
              _service.DisplayAndSaveSortedFile(people);
         }
     }
