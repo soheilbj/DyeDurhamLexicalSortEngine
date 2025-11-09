@@ -1,0 +1,29 @@
+version: 1.0.{build}
+image: Visual Studio 2022
+
+environment:
+  DOTNET_INSTALL_DIR: C:\dotnet9
+
+install:
+  - ps: |
+      Write-Host "installing .NET 9 SDK..."
+      $url = "https://dot.net/v1/dotnet-install.ps1"
+      Invoke-WebRequest $url -OutFile dotnet-install.ps1
+      & .\dotnet-install.ps1 -Channel 9.0 -InstallDir $env:DOTNET_INSTALL_DIR
+      $env:Path = "$env:DOTNET_INSTALL_DIR;$env:DOTNET_INSTALL_DIR\tools;$env:Path"
+      dotnet --info
+
+build_script:
+  - ps: |
+      Write-Host "Building project"
+      dotnet restore
+      dotnet build SampleApp/SampleApp.csproj --configuration Release
+
+test_script:
+  - ps: |
+      Write-Host "Running tests..."
+      dotnet test --no-build --verbosity normal
+
+artifacts:
+  - path: '**\bin\Release\**\*.exe'
+    name: BuildOutput
