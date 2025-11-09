@@ -1,1 +1,1 @@
-![AppVeyor](https://ci.appveyor.com/api/projects/status/username/RepoName?branch=main&svg=true)
+![AppVeyor](https://ci.appveyor.com/api/projects/status/soheilbj/dyedurhamlexicalsortengine?branch=master&svg=true)
