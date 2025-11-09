@@ -17,7 +17,7 @@ build_script:
   - ps: |
       Write-Host "Building project"
       dotnet restore
-      dotnet build SampleApp/SampleApp.csproj --configuration Release
+      dotnet build DyeDurhamLexicalSortEngine.Console/DyeDurhamLexicalSortEngine.Console.csproj --configuration Release
 
 test_script:
   - ps: |
